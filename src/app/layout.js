@@ -1,10 +1,10 @@
-import { Cormorant_Garamond } from "next/font/google";
+import { Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  weight: ["300", "400", "500", "600", "700"],
+const libreBaskerville = Libre_Baskerville({
+  weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-cormorant",
+  variable: "--font-libre",
 });
 
 export const metadata = {
@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${cormorant.variable} font-sans antialiased`}>
+      <body className={`${libreBaskerville.variable} antialiased`}>
         {children}
       </body>
     </html>
