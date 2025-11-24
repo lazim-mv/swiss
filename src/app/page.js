@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = Array.from({ length: 21 }, (_, i) => `/${i + 2}.png`);
+  const images = Array.from({ length: 21 }, (_, i) => `/${i + 2}.jpg`);
 
   useEffect(() => {
     const interval = setInterval(() => {
