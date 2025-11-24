@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = ["/1.jpg", "/2.jpg"];
+  const images = Array.from({ length: 21 }, (_, i) => `/${i + 2}.png`);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -13,7 +13,7 @@ export default function Home() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
@@ -29,7 +29,7 @@ export default function Home() {
             src={src}
             alt={`Luxury Villa ${index + 1}`}
             fill
-            className="object-cover scale-105"
+            className="object-cover object-center"
             priority={index === 0}
             quality={100}
           />
@@ -47,7 +47,7 @@ export default function Home() {
           </div>
 
           <h1 className="mb-6 font-[family-name:var(--font-libre)] text-6xl font-normal tracking-[0.15em] md:text-8xl lg:text-9xl">
-            SWISS VILLA
+            SWISS VILLAGE VILLAS
           </h1>
 
           <div className="mb-8 flex items-center justify-center gap-4">
@@ -60,31 +60,38 @@ export default function Home() {
             Exclusive Luxury Estates
           </p>
 
-          <p className="mb-20 max-w-xl text-sm font-light leading-relaxed tracking-wide text-white/70 md:text-base">
+          <p className="mb-16 max-w-xl text-sm font-light leading-relaxed tracking-wide text-white/70 md:text-base">
             Blending traditional chalet aesthetics with modern sustainable
             technology, Swiss design emphasizes durability and harmonious
             integration with nature.
           </p>
 
-          <div className="mb-12 inline-flex items-center gap-3 border border-white/20 bg-white/5 px-8 py-4 backdrop-blur-sm">
-            <div className="h-2 w-2 animate-pulse rounded-full bg-white" />
-            <p className="text-sm font-normal uppercase tracking-[0.25em] text-white">
-              Coming Soon
-            </p>
-          </div>
+          {/* <div className="mb-8 flex items-center justify-center gap-4">
+            <div className="h-px w-16 bg-white/40" />
+            <div className="h-1.5 w-1.5 rotate-45 bg-white/60" />
+            <div className="h-px w-16 bg-white/40" />
+          </div> */}
+
+          <h2 className="font-[family-name:var(--font-playfair)] text-7xl font-light italic tracking-wide text-white md:text-8xl lg:text-9xl">
+            Coming Soon
+          </h2>
+
+          <p className="mt-6 text-xs uppercase tracking-[0.4em] text-white/60">
+            Launching 2026
+          </p>
         </div>
 
         {/* Carousel Indicators */}
-        <div className="absolute bottom-12 left-1/2 flex -translate-x-1/2 gap-3">
+        <div className="absolute bottom-12 left-1/2 flex max-w-md -translate-x-1/2 flex-wrap justify-center gap-2">
           {images.map((src, index) => (
             <button
               key={src}
               type="button"
               onClick={() => setCurrentImage(index)}
-              className={`h-0.5 rounded-full transition-all duration-500 ${
+              className={`h-1.5 w-1.5 rounded-full transition-all duration-300 ${
                 index === currentImage
-                  ? "w-16 bg-white"
-                  : "w-8 bg-white/30 hover:bg-white/50"
+                  ? "scale-150 bg-white"
+                  : "bg-white/40 hover:bg-white/60"
               }`}
               aria-label={`Go to image ${index + 1}`}
             />
