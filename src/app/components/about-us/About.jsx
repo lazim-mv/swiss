@@ -83,7 +83,7 @@ const About = () => {
 
                     <p className="text-left text-black max-w-full md:max-w-[800px] mb-6 md:mb-8">
                         At Swiss Village Villas, excellence is defined by restraint, precision, and purpose. Rooted in Swiss design philosophy, every estate reflects deliberate craftsmanship, honest materials, and enduring quality.
-                        Inspired by traditional chalet architecture and refined through modern engineering, our villas blend timeless elegance with sustainable innovation—creating homes that exist in harmony with nature and are designed to last for generations.
+                        Inspired by traditional chalet architecture and refined through modern engineering, our villas blend timeless elegance with sustainable innovation creating homes that exist in harmony with nature and are designed to last for generations.
                     </p>
                     <Button text="Explore Us" href="https://example.com" variant='outline' />
                 </div>
