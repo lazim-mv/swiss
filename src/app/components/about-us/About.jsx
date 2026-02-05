@@ -73,7 +73,7 @@ const About = () => {
         <div
             id="aboutComponent"
             ref={aboutRef}
-            className="relative w-full h-auto md:h-screen min-h-[600px] overflow-hidden flex items-center justify-center mt-20 md:mt-36"
+            className="relative w-full h-auto md:h-screen min-h-[600px] overflow-hidden flex items-center justify-center md:mt-20 md:mt-36"
         >
             <div className='flex flex-col md:flex-row items-center justify-between w-full px-6 md:px-0 py-12 md:py-0'>
                 <div className='w-full md:w-[45%] md:pl-28 mb-8 md:mb-0'>
