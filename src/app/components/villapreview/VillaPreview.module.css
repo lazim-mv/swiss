@@ -1,0 +1,144 @@
+.container {
+    margin-top: 9rem;
+    padding: 0 7rem;
+}
+
+.header {
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.line {
+    background-color: black;
+    height: 2px;
+    width: 100%;
+    border: none;
+}
+
+.title {
+    color: black;
+    white-space: nowrap;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    grid-auto-rows: 400px;
+}
+
+.gridItem {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Portrait items span 2 rows */
+.portrait {
+    grid-row: span 2;
+}
+
+/* Landscape items span 1 row */
+.landscape {
+    grid-row: span 1;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image {
+    object-fit: cover;
+    transition: transform 0.7s ease-out;
+}
+
+.gridItem:hover .image {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.gridItem:hover .overlay {
+    opacity: 1;
+}
+
+.textContent {
+    color: white;
+    transform: translateY(20px);
+    transition: transform 0.5s ease-out;
+}
+
+.gridItem:hover .textContent {
+    transform: translateY(0);
+}
+
+.textContent h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 600;
+    color: white;
+}
+
+.textContent p {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.25vw, 1rem);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 3rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 6rem;
+        padding: 0 1.5rem;
+    }
+
+    .header {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        grid-auto-rows: 300px;
+    }
+
+    .portrait {
+        grid-row: span 1;
+    }
+
+    .overlay {
+        padding: 1.5rem;
+    }
+}

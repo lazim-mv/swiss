@@ -1,5 +1,6 @@
 import { Libre_Baskerville, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import ScrollSmootherProvider from "./utils/gsapScrollSmootherProvider";
 
 const libreBaskerville = Libre_Baskerville({
   weight: ["400", "700"],
@@ -23,7 +24,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${libreBaskerville.variable} ${playfair.variable} antialiased`}>
-        {children}
+        <ScrollSmootherProvider>
+          {children}
+        </ScrollSmootherProvider>
       </body>
     </html>
   );
