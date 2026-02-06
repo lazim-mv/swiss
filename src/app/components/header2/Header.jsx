@@ -18,7 +18,7 @@ const Header = () => {
     { name: "Home", href: `/home`, isSection: true, targetId: "home" },
     { name: "About", href: `/aboutComponent`, isSection: true, targetId: "aboutComponent" },
     { name: "Villas", href: `/villas`, isSection: true, targetId: "villas" },
-    { name: "Amenities", href: `/amenities`, isSection: true, targetId: "amenities" },
+    { name: "Foundation", href: `/foundation`, isSection: true, targetId: "foundation" },
 
   ];
 

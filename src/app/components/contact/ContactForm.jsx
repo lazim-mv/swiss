@@ -262,7 +262,7 @@ const ContactForm = () => {
                     </div>
 
                     {/* Location */}
-                    <div>
+                    {/* <div>
                         <h3 className="text-lg font-semibold text-black mb-4">Location</h3>
                         <a
                             href={location.mapUrl}
@@ -280,7 +280,7 @@ const ContactForm = () => {
                                 </p>
                             </div>
                         </a>
-                    </div>
+                    </div> */}
 
                     {/* Email */}
                     <div>

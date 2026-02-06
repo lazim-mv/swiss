@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../../../../public/logos/clogo.png';
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -24,9 +24,10 @@ const Footer = () => {
     ];
 
     const socialLinks = [
-        { icon: Facebook, href: '#', label: 'Facebook' },
-        { icon: Instagram, href: '#', label: 'Instagram' },
-        { icon: Twitter, href: '#', label: 'Twitter' },
+        { icon: Facebook, href: '#', label: 'Facebook', text: 'Facebook' },
+        { icon: Instagram, href: '#', label: 'Instagram', text: 'Instagram' },
+        { icon: Twitter, href: '#', label: 'Twitter', text: 'Twitter' },
+        { icon: MessageCircle, href: 'https://wa.me/9647514447722', label: 'WhatsApp', text: 'WhatsApp' },
     ];
 
     return (
@@ -45,23 +46,10 @@ const Footer = () => {
                         <p className="text-gray-300 text-sm leading-relaxed mb-6">
                             Experience luxury living in the heart of Zakho. Swiss Village offers premium villas with world class amenities and modern design.
                         </p>
-                        {/* Social Links */}
-                        <div className="flex gap-3">
-                            {socialLinks.map((social, index) => (
-                                <a
-                                    key={index}
-                                    href={social.href}
-                                    aria-label={social.label}
-                                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#dcbb9c] transition-all duration-300 group"
-                                >
-                                    <social.icon size={18} className="text-white group-hover:text-[#1f322f] transition-colors" />
-                                </a>
-                            ))}
-                        </div>
                     </div>
 
-                    {/* Quick Links */}
-                    <div className="flex flex-col md:flex-row items-start gap-12 lg:gap-16 w-[60%]">
+                    {/* Quick Links, Contact Us, and Social Media */}
+                    <div className="flex flex-col md:flex-row items-start gap-12 lg:gap-16 w-auto">
                         <div>
                             <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
                             <ul className="space-y-3">
@@ -106,6 +94,26 @@ const Footer = () => {
                                         info@swissvillage.com
                                     </a>
                                 </li>
+                            </ul>
+                        </div>
+
+                        {/* Social Media */}
+                        <div>
+                            <h3 className="text-lg font-semibold mb-6 text-white">Follow Us</h3>
+                            <ul className="space-y-3">
+                                {socialLinks.map((social, index) => (
+                                    <li key={index}>
+                                        <a
+                                            href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-gray-300 hover:text-[#dcbb9c] transition-colors duration-300 text-sm inline-flex items-center gap-2"
+                                        >
+                                            <social.icon size={16} />
+                                            {social.text}
+                                        </a>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>

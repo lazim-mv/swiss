@@ -37,7 +37,7 @@ const Container2 = () => {
     }, []);
 
     return (
-        <div className='mt-20 md:mt-36 px-6 md:px-16 lg:px-28'>
+        <div className='mt-20 md:mt-36 px-6 md:px-16 lg:px-28' id='foundation'>
             <div className='hidden md:flex items-center justify-center gap-4 md:gap-8 mb-12 md:mb-16  '>
                 <hr className='bg-black h-[2px] w-full' />
                 <h4 className='text-black w-max whitespace-nowrap text-sm md:text-base'>{swissVillagePillars.title}</h4>

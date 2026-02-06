@@ -128,10 +128,12 @@ button {
 
 .footer a {
   font-family: var(--font-libre);
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 .header a {
   font-family: var(--font-libre);
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 
