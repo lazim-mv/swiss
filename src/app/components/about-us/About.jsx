@@ -77,7 +77,7 @@ const About = () => {
         >
             <div className='flex flex-col md:flex-row items-center justify-between w-full px-6 md:px-0 py-12 md:py-0'>
                 <div className='w-full md:w-[45%] md:pl-28 mb-8 md:mb-0'>
-                    <h2 className="text-left text-black max-w-full md:max-w-[500px] mb-6 md:mb-8">
+                    <h2 className="text-left text-black max-w-[80%] md:max-w-[500px] mb-6 md:mb-8">
                         The Craft of Enduring Living
                     </h2>
 
@@ -85,7 +85,7 @@ const About = () => {
                         At Swiss Village Villas, excellence is defined by restraint, precision, and purpose. Rooted in Swiss design philosophy, every estate reflects deliberate craftsmanship, honest materials, and enduring quality.
                         Inspired by traditional chalet architecture and refined through modern engineering, our villas blend timeless elegance with sustainable innovation creating homes that exist in harmony with nature and are designed to last for generations.
                     </p>
-                    <Button text="Explore Us" href="https://example.com" variant='outline' />
+                    <Button text="Explore Us" href="#villas" variant='outline' target="" />
                 </div>
                 <div
                     ref={imageContainerRef}

@@ -125,7 +125,7 @@ const ContactForm = () => {
     };
 
     return (
-        <div id="contact" className="mt-20 md:mt-36 px-6 md:px-16 lg:px-28 pb-20">
+        <div id="contact" className="mt-20 md:mt-36 px-6 md:px-16 lg:px-28 pb-20 overflow-x-hidden">
             {/* Header */}
             <div ref={titleRef} className='flex items-center justify-center gap-4 md:gap-8 mb-12 md:mb-16'>
                 <hr className='bg-black h-[2px] w-full' />
@@ -135,7 +135,7 @@ const ContactForm = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                 {/* Contact Form */}
-                <div ref={formRef}>
+                <div ref={formRef} style={{ opacity: mounted ? undefined : 0 }}>
                     <h2 className="text-black mb-6">Get In Touch</h2>
                     <p className="text-gray-600 mb-8">Fill out the form and our team will get back to you within 24 hours.</p>
 
@@ -213,8 +213,8 @@ const ContactForm = () => {
                 </div>
 
                 {/* Contact Information */}
-                <div ref={contactInfoRef} className="space-y-8">
-                    <div>
+                <div ref={contactInfoRef} className="space-y-8" style={{ opacity: mounted ? undefined : 0 }}>
+                    <div className="hidden md:block">
                         <h2 className="text-black mb-6">Contact Information</h2>
                         <p className="text-gray-600 mb-8">Reach out to us directly through any of the following channels.</p>
                     </div>

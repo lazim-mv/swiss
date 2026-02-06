@@ -10,6 +10,7 @@ const Button = ({
     variant = "primary", // primary, secondary, outline
     size = "medium", // small, medium, large
     className = "",
+    target = "_blank",
 }) => {
     // Handle click
     const handleClick = (e) => {
@@ -107,7 +108,7 @@ const Button = ({
         return (
             <a
                 href={href}
-                target="_blank"
+                target={target}
                 rel="noopener noreferrer"
                 className={baseClasses}
                 onClick={handleClick}

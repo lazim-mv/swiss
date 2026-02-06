@@ -15,11 +15,11 @@ const Header = () => {
   const pathName = usePathname();
 
   const menus = [
-    { name: "Home", href: `/`, isSection: true, targetId: "hero" },
+    { name: "Home", href: `/home`, isSection: true, targetId: "home" },
     { name: "About", href: `/aboutComponent`, isSection: true, targetId: "aboutComponent" },
     { name: "Villas", href: `/villas`, isSection: true, targetId: "villas" },
     { name: "Amenities", href: `/amenities`, isSection: true, targetId: "amenities" },
-    { name: "Contact", href: `/contact`, isSection: true, targetId: "contact" },
+
   ];
 
   const normalize = (str) => str.replace(/\/+$/, "");
@@ -101,7 +101,7 @@ const Header = () => {
           onClick={(e) => {
             e.preventDefault();
             const smoother = ScrollSmoother.get();
-            const targetElement = document.getElementById("hero");
+            const targetElement = document.getElementById("home");
 
             if (smoother && targetElement) {
               smoother.scrollTo(targetElement, true, "top top");
@@ -141,7 +141,18 @@ const Header = () => {
 
         {/* CTA Button - Desktop */}
         <a
-          href="tel:+1234567890"
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            const smoother = ScrollSmoother.get();
+            const targetElement = document.getElementById("contact");
+
+            if (smoother && targetElement) {
+              smoother.scrollTo(targetElement, true, "top top");
+            } else if (targetElement) {
+              targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
           className="hidden  lg:flex items-center gap-2 px-6 py-3 bg-[#dcbb9c] text-white rounded-full hover:bg-transparent group hover:border-[#dcbb9c] border border-[#dcbb9c] transition-all duration-300 text-sm font-medium"
         >
           <Phone
@@ -186,8 +197,19 @@ const Header = () => {
 
           {/* Mobile CTA */}
           <a
-            href="tel:+1234567890"
-            onClick={() => setIsOpen(false)}
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              const smoother = ScrollSmoother.get();
+              const targetElement = document.getElementById("contact");
+
+              if (smoother && targetElement) {
+                smoother.scrollTo(targetElement, true, "top top");
+              } else if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+              }
+              setIsOpen(false);
+            }}
             className="mt-8 flex items-center justify-center gap-3 px-6 py-4 bg-[#2c4542] text-white rounded-full hover:bg-[#1f322f] transition-all duration-300 text-base font-medium"
           >
             <Phone size={20} />

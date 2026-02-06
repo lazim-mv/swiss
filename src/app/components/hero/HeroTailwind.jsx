@@ -73,7 +73,7 @@ const HeroTailwind = () => {
     }, []);
 
     return (
-        <div className="relative w-full h-screen min-h-[600px] overflow-hidden flex items-center justify-center bg-white">
+        <div id="home" className="relative w-full h-screen min-h-[600px] overflow-hidden flex items-center justify-center bg-white">
             {/* Video Background */}
             <video
                 className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 z-1 object-cover md:object-contain"
@@ -115,7 +115,18 @@ const HeroTailwind = () => {
                     A private residential community designed to bring comfort, elegance, and family-focused living to the city of Zakho. Surrounded by open landscapes and premium amenities, Swiss Village offers modern villas with exceptional architectural standards and a peaceful lifestyle just 8 minutes from the city center.
                 </p>
 
-                <Button text="Explore More" variant="outline-white" />
+                <Button
+                    text="Download Brochure"
+                    variant="outline-white"
+                    onClick={() => {
+                        const link = document.createElement('a');
+                        link.href = '/Swiss_Village_Zakho_Brochure.pdf';
+                        link.download = 'Swiss_Village_Zakho_Brochure.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }}
+                />
             </div>
         </div>
     );

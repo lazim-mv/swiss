@@ -32,7 +32,7 @@ const Footer = () => {
     return (
         <footer className="bg-[#1f322f] text-white mt-20 footer">
             <div className="max-w-[1920px] mx-auto px-6 md:px-16 lg:px-28 py-12 md:py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_auto_auto_1fr] gap-12 lg:gap-16">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-12 lg:gap-16">
                     {/* Logo & Description */}
                     <div className='max-w-[400px]'>
                         <Image
@@ -61,56 +61,57 @@ const Footer = () => {
                     </div>
 
                     {/* Quick Links */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
-                        <ul className="space-y-3">
-                            {quickLinks.map((link, index) => (
-                                <li key={index}>
+                    <div className="flex flex-col md:flex-row items-start gap-12 lg:gap-16 w-[60%]">
+                        <div>
+                            <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
+                            <ul className="space-y-3">
+                                {quickLinks.map((link, index) => (
+                                    <li key={index}>
+                                        <a
+                                            href={link.href}
+                                            className="text-gray-300 hover:text-[#dcbb9c] transition-colors duration-300 text-sm inline-block w-max"
+                                        >
+                                            {link.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Contact Information */}
+                        <div>
+                            <h3 className="text-lg font-semibold mb-6 text-white">Contact Us</h3>
+                            <ul className="space-y-3">
+                                <li>
                                     <a
-                                        href={link.href}
-                                        className="text-gray-300 hover:text-[#dcbb9c] transition-colors duration-300 text-sm inline-block w-max"
+                                        href="tel:+9647514447722"
+                                        className="text-gray-300 hover:text-[#dcbb9c] transition-colors duration-300 text-sm inline-block"
                                     >
-                                        {link.name}
+                                        0751 444 7722
                                     </a>
                                 </li>
-                            ))}
-                        </ul>
+                                <li>
+                                    <a
+                                        href="tel:+9647514447733"
+                                        className="text-gray-300 hover:text-[#dcbb9c] transition-colors duration-300 text-sm inline-block"
+                                    >
+                                        0751 444 7733
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="mailto:info@swissvillage.com"
+                                        className="text-gray-300 hover:text-[#dcbb9c] transition-colors duration-300 text-sm inline-block"
+                                    >
+                                        info@swissvillage.com
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-
-                    {/* Contact Information */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-6 text-white">Contact Us</h3>
-                        <ul className="space-y-3">
-                            <li>
-                                <a
-                                    href="tel:+9647514447722"
-                                    className="text-gray-300 hover:text-[#dcbb9c] transition-colors duration-300 text-sm inline-block"
-                                >
-                                    0751 444 7722
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="tel:+9647514447733"
-                                    className="text-gray-300 hover:text-[#dcbb9c] transition-colors duration-300 text-sm inline-block"
-                                >
-                                    0751 444 7733
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="mailto:info@swissvillage.com"
-                                    className="text-gray-300 hover:text-[#dcbb9c] transition-colors duration-300 text-sm inline-block"
-                                >
-                                    info@swissvillage.com
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
                     {/* Location Map */}
-                    <div>
-                        {/* <h3 className="text-lg font-semibold mb-6 text-white">Location</h3> */}
+                    {/* <div>
+                        
                         <div className="rounded-lg overflow-hidden border border-white/10">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d42.6857!3d37.1449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDA4JzQxLjYiTiA0MsKwNDEnMDguNSJF!5e0!3m2!1sen!2s!4v1234567890"
@@ -135,7 +136,7 @@ const Footer = () => {
                                 </span>
                             </a>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Bottom Bar */}

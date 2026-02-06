@@ -1,0 +1,165 @@
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+}
+
+.slider {
+    display: flex;
+    height: 100vh;
+}
+
+.slide {
+    height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--100px);
+    position: relative;
+}
+
+.imgBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7);
+    transform: rotateY(180deg);
+}
+
+.content {
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    /* background: rgba(255, 255, 255, 0.4); */
+    padding: var(--20px) var(--30px);
+    border-radius: 8px;
+
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+
+    margin-top: var(--80px);
+
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.textWrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.content .italic {
+    font-style: italic;
+    margin-bottom: var(--20px);
+}
+
+.content h1 {
+    margin-bottom: var(--30px);
+    font-size: var(--font-70);
+    line-height: 1.1;
+    color: white;
+}
+
+.content p {
+    margin-bottom: var(--30px);
+    color: white;
+    font-size: var(--font-24);
+    font-weight: 400;
+}
+
+
+.desktopControls {
+    position: absolute;
+    right: var(--40px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.indicators {
+    display: flex;
+    flex-direction: column;
+    gap: var(--20px);
+}
+
+.indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--12px);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.indicator:hover,
+.indicator.active {
+    opacity: 1;
+}
+
+.indicator:disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+.number {
+    color: rgba(255, 255, 255, 1);
+    font-size: var(--font-14);
+    font-weight: 500;
+    min-width: var(--20px);
+    text-align: right;
+}
+
+.line {
+    width: var(--30px);
+    height: var(--2px);
+    background: rgba(255, 255, 255, 0.6);
+    transition: all 0.4s ease;
+    transform-origin: left;
+}
+
+.indicator.active .line {
+    background: white;
+    transform: scaleX(1.5);
+}
+
+.indicator:hover .line {
+    background: rgba(255, 255, 255, 1);
+    transform: scaleX(1.2);
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+    .desktopControls {
+        display: none;
+    }
+
+
+    .slide {
+        padding: 0 var(--20px);
+    }
+
+    .content {
+        max-width: 100%;
+        padding: 0;
+        margin-top: 0px;
+    }
+
+    .content h1 {
+        font-size: var(--font-40);
+    }
+
+    .content p {
+        font-size: var(--font-18);
+        width: 95%;
+    }
+
+}
