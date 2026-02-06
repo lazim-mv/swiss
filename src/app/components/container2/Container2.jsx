@@ -51,7 +51,7 @@ const Container2 = () => {
                     <div key={pillar.key} className={`flex flex-col items-center justify-center w-full md:w-auto ${index === 1 ? 'md:mt-28' : ''}`}>
                         <div
                             ref={(el) => (imageRefs.current[index] = el)}
-                            className='group w-full md:w-[300px] lg:w-[400px] xl:w-[520px] h-[400px] md:h-[500px] lg:h-[615px] overflow-hidden rounded-xl grayscale-[80%] hover:grayscale-0 relative transition-all duration-700 ease-out'
+                            className='group w-full md:w-[300px] lg:w-[400px] xl:w-[520px] h-[400px] md:h-[500px] lg:h-[615px] overflow-hidden rounded-xl md:grayscale-80 hover:grayscale-0 relative transition-all duration-700 ease-out'
                             style={{ clipPath: 'inset(100% 0% 0% 0%)' }}
                         >
                             <Image
