@@ -48,11 +48,11 @@ export const metadata = {
   openGraph: {
     title: "Swiss Village Zakho - Luxury Villas in Dubai",
     description: "Experience luxury living at Swiss Village Zakho. Premium residential villas with modern architecture and world-class amenities in Bedar, Zakho.",
-    url: 'https://www.swissvillage-zakho.com/',
+    url: 'https://www.swissvillage-zakho.com/og-image.jpeg',
     siteName: 'Swiss Village Zakho',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.jpeg',
         width: 1200,
         height: 630,
         alt: 'Swiss Village Zakho - Luxury Villas',
@@ -85,7 +85,7 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon_32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon16.png', sizes: '16x16', type: 'image/png' },
     ],
     apple: [
