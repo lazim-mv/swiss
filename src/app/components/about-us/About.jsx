@@ -5,6 +5,7 @@ import img1 from '../../../../public/about/2.jpg';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import CTAButton from '../CTAButton1';
 import Button from '../Button';
 import { useWindowSize } from '@react-hook/window-size';
@@ -69,6 +70,20 @@ const About = () => {
         );
     }, [isMobile]);
 
+    // Handle smooth scroll to villas section
+    const handleScrollToVillas = (e) => {
+        e.preventDefault();
+
+        const smoother = ScrollSmoother.get();
+        const targetElement = document.getElementById("villas");
+
+        if (smoother && targetElement) {
+            smoother.scrollTo(targetElement, true, "top top");
+        } else if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <div
             id="aboutComponent"
@@ -85,7 +100,7 @@ const About = () => {
                         At Swiss Village Villas, excellence is defined by restraint, precision, and purpose. Rooted in Swiss design philosophy, every estate reflects deliberate craftsmanship, honest materials, and enduring quality.
                         Inspired by traditional chalet architecture and refined through modern engineering, our villas blend timeless elegance with sustainable innovation creating homes that exist in harmony with nature and are designed to last for generations.
                     </p>
-                    <Button text="Explore Us" href="#villas" variant='outline' target="" />
+                    <Button text="Explore Us" href="#villas" variant='outline' target="" onClick={handleScrollToVillas} />
                 </div>
                 <div
                     ref={imageContainerRef}
