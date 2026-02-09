@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../../../../public/logos/clogo.png';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, MessageCircle } from 'lucide-react';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -12,7 +13,7 @@ const Footer = () => {
         { name: 'Home', href: '#hero' },
         { name: 'About', href: '#aboutComponent' },
         { name: 'Villas', href: '#villas' },
-        { name: 'Amenities', href: '#amenities' },
+        { name: 'Foundation', href: '#foundation' },
         { name: 'Contact', href: '#contact' },
     ];
 
@@ -29,6 +30,20 @@ const Footer = () => {
         { icon: Twitter, href: '#', label: 'Twitter', text: 'Twitter' },
         { icon: MessageCircle, href: 'https://wa.me/9647514447722', label: 'WhatsApp', text: 'WhatsApp' },
     ];
+
+    // Handle smooth scroll to sections
+    const handleSmoothScroll = (e, targetId) => {
+        e.preventDefault();
+
+        const smoother = ScrollSmoother.get();
+        const targetElement = document.getElementById(targetId);
+
+        if (smoother && targetElement) {
+            smoother.scrollTo(targetElement, true, "top top");
+        } else if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    };
 
     return (
         <footer className="bg-[#1f322f] text-white mt-20 footer">
@@ -57,7 +72,8 @@ const Footer = () => {
                                     <li key={index}>
                                         <a
                                             href={link.href}
-                                            className="text-gray-300 hover:text-[#dcbb9c] transition-colors duration-300 text-sm inline-block w-max"
+                                            onClick={(e) => handleSmoothScroll(e, link.href.replace('#', ''))}
+                                            className="text-gray-300 hover:text-[#dcbb9c] transition-colors duration-300 text-sm inline-block w-max cursor-pointer"
                                         >
                                             {link.name}
                                         </a>
